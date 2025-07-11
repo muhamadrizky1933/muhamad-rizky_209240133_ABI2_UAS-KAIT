@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RIZSPORT - Layanan Sepatu Futsal Profesional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #2c3e50;
+        --secondary: #3498db;
+        --accent: #e74c3c;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      .hero-section {
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+          url("https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8f7281a0-99b6-4602-9ee7-3bee4d989a03.png")
+            center/cover no-repeat;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .cart-sidebar {
+        transition: all 0.3s ease;
+      }
+
+      .cart-open {
+        right: 0;
+      }
+
+      .cart-closed {
+        right: -100%;
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu {
+          display: none;
+        }
+
+        .mobile-menu.active {
+          display: flex;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-2">
+          <img
+            src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8818571d-602c-4888-9b0c-faaa2baeed92.png"
+            alt="Logo RIZSPORT - Sepatu bola dengan warna merah dan hitam"
+            class="h-10 w-10 rounded-full"
+          />
+          <h1 class="text-xl font-bold text-gray-800">
+            RIZ<span class="text-red-600">SPORT</span>
+          </h1>
+        </div>
+
+        <nav class="hidden md:flex space-x-8">
+          <a href="#home" class="text-gray-700 hover:text-red-600 font-medium"
+            >Beranda</a
+          >
+          <a
+            href="#services"
+            class="text-gray-700 hover:text-red-600 font-medium"
+            >Layanan</a
+          >
+          <a
+            href="#products"
+            class="text-gray-700 hover:text-red-600 font-medium"
+            >Produk</a
+          >
+          <a href="#about" class="text-gray-700 hover:text-red-600 font-medium"
+            >Tentang Kami</a
+          >
+          <a
+            href="#contact"
+            class="text-gray-700 hover:text-red-600 font-medium"
+            >Kontak</a
+          >
+        </nav>
+
+        <div class="flex items-center space-x-4">
+          <button
+            id="cartButton"
+            class="relative text-gray-700 hover:text-red-600"
+          >
+            <i class="fas fa-shopping-cart text-xl"></i>
+            <span
+              id="cartCount"
+              class="absolute -top-2 -right-2 bg-red-600 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center"
+              >0</span
+            >
+          </button>
+
+          <button id="mobileMenuButton" class="md:hidden text-gray-700">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobileMenu"
+        class="mobile-menu md:hidden bg-white w-full flex-col py-2 px-4 shadow-md"
+      >
+        <a
+          href="#home"
+          class="py-2 text-gray-700 hover:text-red-600 font-medium"
+          >Beranda</a
+        >
+        <a
+          href="#services"
+          class="py-2 text-gray-700 hover:text-red-600 font-medium"
+          >Layanan</a
+        >
+        <a
+          href="#products"
+          class="py-2 text-gray-700 hover:text-red-600 font-medium"
+          >Produk</a
+        >
+        <a
+          href="#about"
+          class="py-2 text-gray-700 hover:text-red-600 font-medium"
+          >Tentang Kami</a
+        >
+        <a
+          href="#contact"
+          class="py-2 text-gray-700 hover:text-red-600 font-medium"
+          >Kontak</a
+        >
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-white py-20 md:py-32">
+      <div class="container mx-auto px-4 flex flex-col items-start">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          TOKO SEPATU FUTSAL TERPERCAYA
+        </h1>
+        <p class="text-lg md:text-xl mb-8 max-w-2xl">
+          Beli sepatu futsal berkualitas dari merek ternama dengan harga terbaik
+          di RIZSPORT.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a
+            href="#products"
+            class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 text-center"
+            >Lihat Produk</a
+          >
+          <a
+            href="#contact"
+            class="bg-white hover:bg-gray-100 text-gray-800 font-bold py-3 px-6 rounded-lg transition duration-300 text-center"
+            >Hubungi Kami</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+          Keunggulan Kami
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div
+            class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300"
+          >
+            <div class="text-red-600 mb-4">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e3859cda-f006-4608-97f6-c5c3e571e4f4.png"
+                alt="Logo garansi 100% original"
+                class="h-16 w-16 mx-auto rounded-full"
+              />
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              100% Original
+            </h3>
+            <p class="text-gray-600 text-center">
+              Produk kami dijamin asli dengan garansi resmi dari brand.
+            </p>
+          </div>
+
+          <div
+            class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300"
+          >
+            <div class="text-red-600 mb-4">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/60d1f5ee-4191-43a8-adfa-b7d6021d8c7b.png"
+                alt="Sepatu futsal baru dengan warna cerah"
+                class="h-16 w-16 mx-auto rounded-full"
+              />
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-center">Sol Baru</h3>
+            <p class="text-gray-600 text-center">
+              Penggantian sol sepatu futsal dengan bahan berkualitas tinggi
+              untuk kenyamanan maksimal.
+            </p>
+          </div>
+
+          <div
+            class="bg-gray-50 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300"
+          >
+            <div class="text-red-600 mb-4">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/43b35e2f-76ed-4e34-b911-1125f66a201c.png"
+                alt="Tangan sedang menjahit bagian sepatu yang rusak"
+                class="h-16 w-16 mx-auto rounded-full"
+              />
+            </div>
+            <h3 class="text-xl font-semibold mb-3 text-center">
+              Perbaikan Khusus
+            </h3>
+            <p class="text-gray-600 text-center">
+              Memperbaiki kerusakan pada sepatu futsal Anda dengan teknik
+              profesional.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+          Produk Kami
+        </h2>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Product 1 -->
+          <div
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+          >
+            <div class="relative overflow-hidden h-48">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f022c8be-d1fb-4132-ae55-5bb0b157684e.png"
+                alt="Produk sepatu futsal Adidas Predator edisi terbaru"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded"
+              >
+                Baru
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold mb-1">Adidas Predator</h3>
+              <p class="text-gray-600 text-sm mb-2">
+                Sepatu futsal profesional dengan sol karet tinggi
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-gray-800">Rp 1.250.000</span>
+                <button
+                  class="add-to-cart bg-gray-200 hover:bg-red-600 hover:text-white text-gray-800 px-3 py-1 rounded text-sm transition duration-300"
+                  data-id="1"
+                  data-name="Adidas Predator"
+                  data-price="1250000"
+                >
+                  <i class="fas fa-plus mr-1"></i> Keranjang
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+          >
+            <div class="relative overflow-hidden h-48">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4ebe2a28-d1a3-4695-a8e1-9a8dd8584fe2.png"
+                alt="Sepatu futsal Nike Mercurial berwarna kuning neon dengan desain aerodinamis"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold mb-1">Nike Mercurial</h3>
+              <p class="text-gray-600 text-sm mb-2">
+                Desain aerodinamis untuk kecepatan maksimal
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-gray-800">Rp 1.499.000</span>
+                <button
+                  class="add-to-cart bg-gray-200 hover:bg-red-600 hover:text-white text-gray-800 px-3 py-1 rounded text-sm transition duration-300"
+                  data-id="2"
+                  data-name="Nike Mercurial"
+                  data-price="1499000"
+                >
+                  <i class="fas fa-plus mr-1"></i> Keranjang
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3 -->
+          <div
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+          >
+            <div class="relative overflow-hidden h-48">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bf9db743-981e-4d38-9334-46458fcfee7d.png"
+                alt="Sepatu futsal Puma Ultra berwarna putih dan biru dengan material ringan"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded"
+              >
+                Terlaris
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold mb-1">Puma Ultra</h3>
+              <p class="text-gray-600 text-sm mb-2">
+                Material ringan untuk kenyamanan ekstra
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-gray-800">Rp 950.000</span>
+                <button
+                  class="add-to-cart bg-gray-200 hover:bg-red-600 hover:text-white text-gray-800 px-3 py-1 rounded text-sm transition duration-300"
+                  data-id="3"
+                  data-name="Puma Ultra"
+                  data-price="950000"
+                >
+                  <i class="fas fa-plus mr-1"></i> Keranjang
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 4 -->
+          <div
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+          >
+            <div class="relative overflow-hidden h-48">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1cc1190e-5b2d-458d-8b05-5f7874b48e70.png"
+                alt="Sepatu futsal Mizuno Morelia berwarna hitam klasik dengan sol lembut"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold mb-1">Mizuno Morelia</h3>
+              <p class="text-gray-600 text-sm mb-2">
+                Desain klasik dengan sol lembut
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-gray-800">Rp 1.199.000</span>
+                <button
+                  class="add-to-cart bg-gray-200 hover:bg-red-600 hover:text-white text-gray-800 px-3 py-1 rounded text-sm transition duration-300"
+                  data-id="4"
+                  data-name="Mizuno Morelia"
+                  data-price="1199000"
+                >
+                  <i class="fas fa-plus mr-1"></i> Keranjang
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+          >
+            <div class="relative overflow-hidden h-48">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7ba02b8a-19c9-4f0f-9303-c5d8c6b5a6c0.png"
+                alt="Sepatu futsal lokal Specs berwarna merah menyala dengan harga terjangkau"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold mb-1">Specs Fighter</h3>
+              <p class="text-gray-600 text-sm mb-2">
+                Kualitas baik dengan harga terjangkau
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-gray-800">Rp 599.000</span>
+                <button
+                  class="add-to-cart bg-gray-200 hover:bg-red-600 hover:text-white text-gray-800 px-3 py-1 rounded text-sm transition duration-300"
+                  data-id="5"
+                  data-name="Specs Fighter"
+                  data-price="599000"
+                >
+                  <i class="fas fa-plus mr-1"></i> Keranjang
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div
+            class="product-card bg-white rounded-lg overflow-hidden shadow-md transition duration-300"
+          >
+            <div class="relative overflow-hidden h-48">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/effc9f99-4399-46a5-b001-36c1c72914e7.png"
+                alt="Sepatu futsal Joma berwarna biru navy dengan strip putih, tipe limited edition"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded"
+              >
+                Limited
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold mb-1">Joma Pro FC</h3>
+              <p class="text-gray-600 text-sm mb-2">
+                Edisi terbatas dengan performa tinggi
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="font-bold text-gray-800">Rp 899.000</span>
+                <button
+                  class="add-to-cart bg-gray-200 hover:bg-red-600 hover:text-white text-gray-800 px-3 py-1 rounded text-sm transition duration-300"
+                  data-id="6"
+                  data-name="Joma Pro FC"
+                  data-price="899000"
+                >
+                  <i class="fas fa-plus mr-1"></i> Keranjang
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row items-center">
+          <div class="lg:w-1/2 mb-8 lg:mb-0 lg:pr-8">
+            <img
+              src="gambar/WhatsApp Image 2025-07-12 at 00.26.12_fdb83f3b.jpg"
+              alt="Tim RIZSPORT sedang bekerja di workshop dengan berbagai peralatan perbaikan sepatu"
+              class="rounded-lg shadow-md w-full"
+            />
+          </div>
+          <div class="lg:w-1/2">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">
+              Tentang RIZSPORT
+            </h2>
+            <p class="text-gray-700 mb-4">
+              RIZSPORT adalah dealer resmi sepatu futsal terkemuka di Indonesia
+              sejak tahun 2015.
+            </p>
+            <p class="text-gray-700 mb-4">
+              Kami menyediakan berbagai produk sepatu futsal original dari
+              merek-merek ternama dengan harga terbaik dan jaminan keaslian.
+            </p>
+            <p class="text-gray-700 mb-6">
+              Tim kami terdiri dari profesional yang paham betul dengan
+              kebutuhan pemain futsal dan karakteristik sepatu futsal.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#products"
+                class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-center"
+                >Lihat Produk</a
+              >
+              <a
+                href="#contact"
+                class="bg-gray-800 hover:bg-gray-900 text-white font-bold py-2 px-4 rounded-lg transition duration-300 text-center"
+                >Hubungi Kami</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+          Apa Kata Pelanggan Kami
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex items-center mb-4">
+              <img
+                src="gambar/WhatsApp Image 2025-07-12 at 00.26.12_fdb83f3b.jpg"
+                alt="Foto Andi, pemain futsal berusia 28 tahun"
+                class="h-12 w-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-semibold">Andi Pratama</h4>
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              "Sepatu futsal dari RIZSPORT sangat nyaman digunakan. Pelayanannya
+              juga cepat dan ramah."
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex items-center mb-4">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4daeb4b6-fdfe-44c9-8d3b-5a2712d0dbcd.png"
+                alt="Foto Budi, pelatih futsal lokal"
+                class="h-12 w-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-semibold">Budi Santoso</h4>
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half-alt"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              "Seluruh tim saya menggunakan jasa RIZSPORT untuk perawatan
+              sepatu. Hasilnya selalu memuaskan!"
+            </p>
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <div class="flex items-center mb-4">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/edb518ee-40d6-4dd0-925a-1f2e0fbabb9c.png"
+                alt="Foto Citra, atlet futsal wanita"
+                class="h-12 w-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-semibold">Citra Dewi</h4>
+                <div class="flex text-yellow-400">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              "Pilihan produknya lengkap, harga bersaing, dan kualitas terjamin.
+              Saya puas berbelanja di RIZSPORT."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+          Hubungi Kami
+        </h2>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+          <div class="lg:w-1/2">
+            <form id="contactForm" class="space-y-4">
+              <div>
+                <label for="name" class="block text-gray-700 font-medium mb-1"
+                  >Nama Lengkap</label
+                >
+                <input
+                  type="text"
+                  id="name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+                />
+              </div>
+
+              <div>
+                <label for="email" class="block text-gray-700 font-medium mb-1"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+                />
+              </div>
+
+              <div>
+                <label for="phone" class="block text-gray-700 font-medium mb-1"
+                  >Nomor Telepon</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+                />
+              </div>
+
+              <div>
+                <label
+                  for="message"
+                  class="block text-gray-700 font-medium mb-1"
+                  >Pesan</label
+                >
+                <textarea
+                  id="message"
+                  rows="4"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+                ></textarea>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300"
+              >
+                Kirim Pesan
+              </button>
+            </form>
+          </div>
+
+          <div class="lg:w-1/2">
+            <div class="bg-gray-50 p-6 rounded-lg shadow-sm h-full">
+              <h3 class="text-xl font-semibold mb-4 text-gray-800">
+                Informasi Kontak
+              </h3>
+
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <i class="fas fa-map-marker-alt text-red-600 mt-1 mr-4"></i>
+                  <div>
+                    <h4 class="font-medium text-gray-800">Alamat</h4>
+                    <p class="text-gray-600">Jl. Raden adi wijaya Raya no 40</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <i class="fas fa-phone-alt text-red-600 mt-1 mr-4"></i>
+                  <div>
+                    <h4 class="font-medium text-gray-800">Telepon</h4>
+                    <p class="text-gray-600">021-1234-5678</p>
+                    <p class="text-gray-600">083112851738 (WhatsApp)</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <i class="fas fa-envelope text-red-600 mt-1 mr-4"></i>
+                  <div>
+                    <h4 class="font-medium text-gray-800">Email</h4>
+                    <p class="text-gray-600">muhamadkm115@gmail.com</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start">
+                  <i class="fas fa-clock text-red-600 mt-1 mr-4"></i>
+                  <div>
+                    <h4 class="font-medium text-gray-800">Jam Operasional</h4>
+                    <p class="text-gray-600">Senin - Jumat: 09:00 - 20:00</p>
+                    <p class="text-gray-600">Sabtu - Minggu: 10:00 - 18:00</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6">
+                <h4 class="font-medium text-gray-800 mb-3">Ikuti Kami</h4>
+                <div class="flex space-x-4">
+                  <a
+                    href="#"
+                    class="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-red-600 hover:text-white transition duration-300"
+                  >
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-red-600 hover:text-white transition duration-300"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-red-600 hover:text-white transition duration-300"
+                  >
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a
+                    href="#"
+                    class="h-10 w-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-red-600 hover:text-white transition duration-300"
+                  >
+                    <i class="fab fa-tiktok"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div
+      id="cartSidebar"
+      class="cart-sidebar fixed top-0 right-0 h-full w-full md:w-1/2 lg:w-1/3 bg-white shadow-xl z-50 overflow-y-auto cart-closed"
+    >
+      <div class="p-6">
+        <div class="flex justify-between items-center mb-6">
+          <h3 class="text-xl font-bold text-gray-800">Keranjang Belanja</h3>
+          <button id="closeCart" class="text-gray-500 hover:text-red-600">
+            <i class="fas fa-times text-xl"></i>
+          </button>
+        </div>
+
+        <div id="cartItems" class="space-y-4 mb-6">
+          <!-- Cart items will be dynamically added here -->
+          <div class="text-center py-8 text-gray-500" id="emptyCartMsg">
+            <i class="fas fa-shopping-cart text-4xl mb-4"></i>
+            <p>Keranjang belanja Anda kosong</p>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-200 pt-4">
+          <div class="flex justify-between mb-2">
+            <span class="text-gray-600">Subtotal</span>
+            <span id="cartSubtotal" class="font-semibold">Rp 0</span>
+          </div>
+
+          <div class="flex justify-between mb-4">
+            <span class="text-gray-600">Pengiriman</span>
+            <span class="text-gray-600">Dihitung saat checkout</span>
+          </div>
+
+          <div class="flex justify-between text-lg font-bold mb-6">
+            <span>Total</span>
+            <span id="cartTotal">Rp 0</span>
+          </div>
+
+          <button
+            id="checkoutBtn"
+            class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 mb-3"
+          >
+            Lanjut ke Pembayaran
+          </button>
+
+          <button
+            id="continueShopping"
+            class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-4 rounded-lg transition duration-300"
+          >
+            Lanjut Belanja
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div
+      id="paymentModal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+    >
+      <div class="bg-white rounded-lg p-6 w-full max-w-md">
+        <div class="flex justify-between items-center mb-4">
+          <h3 class="text-xl font-bold text-gray-800">Metode Pembayaran</h3>
+          <button
+            id="closePaymentModal"
+            class="text-gray-500 hover:text-red-600"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="space-y-4">
+          <div class="bg-gray-100 p-4 rounded-lg">
+            <h4 class="font-semibold mb-2">Ringkasan Pesanan</h4>
+            <div id="paymentSummary" class="space-y-2">
+              <!-- Order summary will be displayed here -->
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <label class="block text-gray-700 font-medium mb-2"
+              >Pilih Metode Pembayaran</label
+            >
+            <div class="space-y-2">
+              <label class="flex items-center space-x-3 cursor-pointer">
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="bankTransfer"
+                  checked
+                  class="h-5 w-5 text-red-600"
+                />
+                <div>
+                  <span class="block font-medium">Transfer Bank</span>
+                  <span class="block text-sm text-gray-500"
+                    >BCA, Mandiri, BRI, BNI</span
+                  >
+                </div>
+              </label>
+
+              <label class="flex items-center space-x-3 cursor-pointer">
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="ewallet"
+                  class="h-5 w-5 text-red-600"
+                />
+                <div>
+                  <span class="block font-medium">E-Wallet</span>
+                  <span class="block text-sm text-gray-500"
+                    >OVO, Gopay, DANA, LinkAja</span
+                  >
+                </div>
+              </label>
+
+              <label class="flex items-center space-x-3 cursor-pointer">
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="cod"
+                  class="h-5 w-5 text-red-600"
+                />
+                <div>
+                  <span class="block font-medium">Bayar di Tempat (COD)</span>
+                  <span class="block text-sm text-gray-500"
+                    >Hanya tersedia untuk area tertentu</span
+                  >
+                </div>
+              </label>
+
+              <label class="flex items-center space-x-3 cursor-pointer">
+                <input
+                  type="radio"
+                  name="paymentMethod"
+                  value="creditCard"
+                  class="h-5 w-5 text-red-600"
+                />
+                <div>
+                  <span class="block font-medium">Kartu Kredit</span>
+                  <span class="block text-sm text-gray-500"
+                    >Visa, Mastercard, JCB</span
+                  >
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <button
+            id="confirmPayment"
+            class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300 mt-4"
+          >
+            Konfirmasi Pembayaran
+          </button>
+
+          <button
+            id="backToCart"
+            class="w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-3 px-4 rounded-lg transition duration-300"
+          >
+            Kembali ke Keranjang
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Order Confirmation Modal -->
+    <div
+      id="orderConfirmation"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+    >
+      <div class="bg-white rounded-lg p-6 w-full max-w-md text-center">
+        <div class="text-green-500 text-5xl mb-4">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">
+          Pesanan Anda Berhasil!
+        </h3>
+        <p class="text-gray-600 mb-4">
+          Terima kasih telah berbelanja di RIZSPORT. Detail pesanan telah
+          dikirim ke email Anda.
+        </p>
+        <p class="text-gray-600 mb-6">
+          Nomor Pesanan:
+          <span id="orderNumber" class="font-bold">RIZ123456789</span>
+        </p>
+        <button
+          id="closeConfirmation"
+          class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300"
+        >
+          Tutup
+        </button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <div class="flex items-center space-x-2 mb-4">
+              <img
+                src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/29e0744f-31d8-4806-bc37-77ba90fb1954.png"
+                alt="Logo kecil RIZSPORT"
+                class="h-8 w-8 rounded-full"
+              />
+              <h3 class="text-xl font-bold text-white">
+                RIZ<span class="text-red-500">SPORT</span>
+              </h3>
+            </div>
+            <p class="mb-4">
+              Layanan profesional untuk sepatu futsal Anda dengan kualitas
+              terbaik dan harga bersaing.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-red-500 transition duration-300"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-red-500 transition duration-300"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-red-500 transition duration-300"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="#"
+                class="text-gray-400 hover:text-red-500 transition duration-300"
+                ><i class="fab fa-tiktok"></i
+              ></a>
+            </div>
+          </div>
+
+          <div>
+            <h4 class="text-white font-bold text-lg mb-4">Layanan</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="hover:text-red-500 transition duration-300"
+                  >Pembersihan Sepatu</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-red-500 transition duration-300"
+                  >Penggantian Sol</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-red-500 transition duration-300"
+                  >Perbaikan Khusus</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-red-500 transition duration-300"
+                  >Custom Desain</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-red-500 transition duration-300"
+                  >Penjualan Aksesoris</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-bold text-lg mb-4">Produk</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#" class="hover:text-red-500 transition duration-300"
+                  >Adidas</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-red-500 transition duration-300"
+                  >Nike</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-red-500 transition duration-300"
+                  >Puma</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-red-500 transition duration-300"
+                  >Mizuno</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:text-red-500 transition duration-300"
+                  >Lokal</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="text-white font-bold text-lg mb-4">Kontak</h4>
+            <ul class="space-y-2">
+              <li class="flex items-center">
+                <i class="fas fa-map-marker-alt text-red-500 mr-3"></i>
+                <span>Jl. Futsal Raya No. 123, Jakarta</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-phone-alt text-red-500 mr-3"></i>
+                <span>021-1234-5678</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-envelope text-red-500 mr-3"></i>
+                <span>info@rizsport.com</span>
+              </li>
+              <li class="flex items-center">
+                <i class="fas fa-clock text-red-500 mr-3"></i>
+                <span>Senin-Minggu, 09:00-20:00</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+          <p>&copy; 2023 RIZSPORT. Semua Hak Dilindungi.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile Menu Toggle
+      document
+        .getElementById("mobileMenuButton")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobileMenu");
+          mobileMenu.classList.toggle("active");
+        });
+
+      // Cart Functionality
+      const cart = [];
+
+      document
+        .getElementById("cartButton")
+        .addEventListener("click", function () {
+          document
+            .getElementById("cartSidebar")
+            .classList.remove("cart-closed");
+          document.getElementById("cartSidebar").classList.add("cart-open");
+        });
+
+      document
+        .getElementById("closeCart")
+        .addEventListener("click", function () {
+          document.getElementById("cartSidebar").classList.remove("cart-open");
+          document.getElementById("cartSidebar").classList.add("cart-closed");
+        });
+
+      document
+        .getElementById("continueShopping")
+        .addEventListener("click", function () {
+          document.getElementById("cartSidebar").classList.remove("cart-open");
+          document.getElementById("cartSidebar").classList.add("cart-closed");
+        });
+
+      document.querySelectorAll(".add-to-cart").forEach((button) => {
+        button.addEventListener("click", function () {
+          const id = this.getAttribute("data-id");
+          const name = this.getAttribute("data-name");
+          const price = parseInt(this.getAttribute("data-price"));
+
+          const existingItem = cart.find((item) => item.id === id);
+
+          if (existingItem) {
+            existingItem.quantity++;
+          } else {
+            cart.push({
+              id,
+              name,
+              price,
+              quantity: 1,
+            });
+          }
+
+          updateCart();
+
+          // Show cart sidebar when item is added
+          document
+            .getElementById("cartSidebar")
+            .classList.remove("cart-closed");
+          document.getElementById("cartSidebar").classList.add("cart-open");
+        });
+      });
+
+      function updateCart() {
+        const cartItems = document.getElementById("cartItems");
+        const emptyCartMsg = document.getElementById("emptyCartMsg");
+        const cartCount = document.getElementById("cartCount");
+        const cartSubtotal = document.getElementById("cartSubtotal");
+        const cartTotal = document.getElementById("cartTotal");
+
+        if (cart.length === 0) {
+          emptyCartMsg.classList.remove("hidden");
+          cartItems.innerHTML = "";
+        } else {
+          emptyCartMsg.classList.add("hidden");
+
+          let html = "";
+          let subtotal = 0;
+
+          cart.forEach((item) => {
+            const itemTotal = item.price * item.quantity;
+            subtotal += itemTotal;
+
+            html += `
+                        <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                            <div>
+                                <h4 class="font-medium">${item.name}</h4>
+                                <p class="text-sm text-gray-600">Rp ${item.price.toLocaleString()}</p>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="quantity-btn bg-gray-200 hover:bg-gray-300 text-gray-800 h-8 w-8 rounded flex items-center justify-center" data-id="${
+                                  item.id
+                                }" data-action="decrease">
+                                    <i class="fas fa-minus text-xs"></i>
+                                </button>
+                                <span class="quantity">${item.quantity}</span>
+                                <button class="quantity-btn bg-gray-200 hover:bg-gray-300 text-gray-800 h-8 w-8 rounded flex items-center justify-center" data-id="${
+                                  item.id
+                                }" data-action="increase">
+                                    <i class="fas fa-plus text-xs"></i>
+                                </button>
+                                <button class="remove-btn bg-red-600 hover:bg-red-700 text-white h-8 w-8 rounded flex items-center justify-center" data-id="${
+                                  item.id
+                                }">
+                                    <i class="fas fa-trash text-xs"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `;
+          });
+
+          cartItems.innerHTML = html;
+
+          // Add event listeners to quantity buttons
+          document.querySelectorAll(".quantity-btn").forEach((button) => {
+            button.addEventListener("click", function () {
+              const id = this.getAttribute("data-id");
+              const action = this.getAttribute("data-action");
+
+              const item = cart.find((item) => item.id === id);
+
+              if (action === "increase") {
+                item.quantity++;
+              } else if (action === "decrease" && item.quantity > 1) {
+                item.quantity--;
+              }
+
+              updateCart();
+            });
+          });
+
+          // Add event listeners to remove buttons
+          document.querySelectorAll(".remove-btn").forEach((button) => {
+            button.addEventListener("click", function () {
+              const id = this.getAttribute("data-id");
+
+              const index = cart.findIndex((item) => item.id === id);
+              if (index !== -1) {
+                cart.splice(index, 1);
+              }
+
+              updateCart();
+            });
+          });
+        }
+
+        // Update cart count and totals
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        cartCount.textContent = totalItems;
+
+        const subtotalAmount = cart.reduce(
+          (sum, item) => sum + item.price * item.quantity,
+          0
+        );
+        cartSubtotal.textContent = "Rp " + subtotalAmount.toLocaleString();
+        cartTotal.textContent = "Rp " + subtotalAmount.toLocaleString();
+      }
+
+      // Checkout Process
+      document
+        .getElementById("checkoutBtn")
+        .addEventListener("click", function () {
+          if (cart.length === 0) {
+            alert("Keranjang belanja Anda kosong!");
+            return;
+          }
+
+          // Close cart sidebar
+          document.getElementById("cartSidebar").classList.remove("cart-open");
+          document.getElementById("cartSidebar").classList.add("cart-closed");
+
+          // Show payment modal
+          document.getElementById("paymentModal").classList.remove("hidden");
+
+          // Update payment summary
+          const paymentSummary = document.getElementById("paymentSummary");
+          let html = "";
+
+          cart.forEach((item) => {
+            html += `
+                    <div class="flex justify-between text-sm">
+                        <span>${item.name} x${item.quantity}</span>
+                        <span>Rp ${(
+                          item.price * item.quantity
+                        ).toLocaleString()}</span>
+                    </div>
+                `;
+          });
+
+          const subtotal = cart.reduce(
+            (sum, item) => sum + item.price * item.quantity,
+            0
+          );
+          html += `
+                <div class="border-t border-gray-300 pt-2 mt-2 flex justify-between font-semibold">
+                    <span>Total</span>
+                    <span>Rp ${subtotal.toLocaleString()}</span>
+                </div>
+            `;
+
+          paymentSummary.innerHTML = html;
+        });
+
+      // Back to cart from payment modal
+      document
+        .getElementById("backToCart")
+        .addEventListener("click", function () {
+          document.getElementById("paymentModal").classList.add("hidden");
+          document
+            .getElementById("cartSidebar")
+            .classList.remove("cart-closed");
+          document.getElementById("cartSidebar").classList.add("cart-open");
+        });
+
+      // Close payment modal
+      document
+        .getElementById("closePaymentModal")
+        .addEventListener("click", function () {
+          document.getElementById("paymentModal").classList.add("hidden");
+        });
+
+      // Confirm payment
+      document
+        .getElementById("confirmPayment")
+        .addEventListener("click", function () {
+          // In a real app, you would process the payment here
+          // For this demo, we'll just show the confirmation
+
+          document.getElementById("paymentModal").classList.add("hidden");
+          document
+            .getElementById("orderConfirmation")
+            .classList.remove("hidden");
+
+          // Generate random order number
+          document.getElementById("orderNumber").textContent =
+            "RIZ" + Math.floor(100000000 + Math.random() * 900000000);
+
+          // Clear the cart
+          cart.length = 0;
+          updateCart();
+        });
+
+      // Close confirmation modal
+      document
+        .getElementById("closeConfirmation")
+        .addEventListener("click", function () {
+          document.getElementById("orderConfirmation").classList.add("hidden");
+        });
+
+      // Form submission
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Get form values
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const message = document.getElementById("message").value;
+
+          // Simple validation
+          if (!name || !message) {
+            alert("Nama dan pesan harus diisi!");
+            return;
+          }
+
+          // In a real app, you would send this data to a server
+          // For this demo, we'll just show an alert
+          alert(
+            `Terima kasih ${name}, pesan Anda telah terkirim. Kami akan segera menghubungi Anda melalui ${
+              email || phone
+            }.`
+          );
+
+          // Reset form
+          this.reset();
+        });
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
